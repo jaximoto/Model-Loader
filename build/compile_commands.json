@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/jaxon/graphic/waves/build",
+  "command": "/usr/bin/c++  -I/home/jaxon/assimp/include -I/home/jaxon/Downloads/freetype-2.10.0/include -I/home/jaxon/graphic/waves/include -I/home/jaxon/graphic/waves/src -g -o CMakeFiles/waves.dir/src/main.cpp.o -c /home/jaxon/graphic/waves/src/main.cpp",
+  "file": "/home/jaxon/graphic/waves/src/main.cpp",
+  "output": "CMakeFiles/waves.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/jaxon/graphic/waves/build",
+  "command": "/usr/bin/cc  -I/home/jaxon/assimp/include -I/home/jaxon/Downloads/freetype-2.10.0/include -I/home/jaxon/graphic/waves/include -I/home/jaxon/graphic/waves/src -g -o CMakeFiles/waves.dir/src/glad.c.o -c /home/jaxon/graphic/waves/src/glad.c",
+  "file": "/home/jaxon/graphic/waves/src/glad.c",
+  "output": "CMakeFiles/waves.dir/src/glad.c.o"
+},
+{
+  "directory": "/home/jaxon/graphic/waves/build",
+  "command": "/usr/bin/c++  -I/home/jaxon/assimp/include -I/home/jaxon/Downloads/freetype-2.10.0/include -I/home/jaxon/graphic/waves/include -I/home/jaxon/graphic/waves/src -g -o CMakeFiles/waves.dir/src/imgui.cpp.o -c /home/jaxon/graphic/waves/src/imgui.cpp",
+  "file": "/home/jaxon/graphic/waves/src/imgui.cpp",
+  "output": "CMakeFiles/waves.dir/src/imgui.cpp.o"
+},
+{
+  "directory": "/home/jaxon/graphic/waves/build",
+  "command": "/usr/bin/c++  -I/home/jaxon/assimp/include -I/home/jaxon/Downloads/freetype-2.10.0/include -I/home/jaxon/graphic/waves/include -I/home/jaxon/graphic/waves/src -g -o CMakeFiles/waves.dir/src/imgui_draw.cpp.o -c /home/jaxon/graphic/waves/src/imgui_draw.cpp",
+  "file": "/home/jaxon/graphic/waves/src/imgui_draw.cpp",
+  "output": "CMakeFiles/waves.dir/src/imgui_draw.cpp.o"
+},
+{
+  "directory": "/home/jaxon/graphic/waves/build",
+  "command": "/usr/bin/c++  -I/home/jaxon/assimp/include -I/home/jaxon/Downloads/freetype-2.10.0/include -I/home/jaxon/graphic/waves/include -I/home/jaxon/graphic/waves/src -g -o CMakeFiles/waves.dir/src/imgui_tables.cpp.o -c /home/jaxon/graphic/waves/src/imgui_tables.cpp",
+  "file": "/home/jaxon/graphic/waves/src/imgui_tables.cpp",
+  "output": "CMakeFiles/waves.dir/src/imgui_tables.cpp.o"
+},
+{
+  "directory": "/home/jaxon/graphic/waves/build",
+  "command": "/usr/bin/c++  -I/home/jaxon/assimp/include -I/home/jaxon/Downloads/freetype-2.10.0/include -I/home/jaxon/graphic/waves/include -I/home/jaxon/graphic/waves/src -g -o CMakeFiles/waves.dir/src/imgui_widgets.cpp.o -c /home/jaxon/graphic/waves/src/imgui_widgets.cpp",
+  "file": "/home/jaxon/graphic/waves/src/imgui_widgets.cpp",
+  "output": "CMakeFiles/waves.dir/src/imgui_widgets.cpp.o"
+},
+{
+  "directory": "/home/jaxon/graphic/waves/build",
+  "command": "/usr/bin/c++  -I/home/jaxon/assimp/include -I/home/jaxon/Downloads/freetype-2.10.0/include -I/home/jaxon/graphic/waves/include -I/home/jaxon/graphic/waves/src -g -o CMakeFiles/waves.dir/src/imgui_impl_glfw.cpp.o -c /home/jaxon/graphic/waves/src/imgui_impl_glfw.cpp",
+  "file": "/home/jaxon/graphic/waves/src/imgui_impl_glfw.cpp",
+  "output": "CMakeFiles/waves.dir/src/imgui_impl_glfw.cpp.o"
+},
+{
+  "directory": "/home/jaxon/graphic/waves/build",
+  "command": "/usr/bin/c++  -I/home/jaxon/assimp/include -I/home/jaxon/Downloads/freetype-2.10.0/include -I/home/jaxon/graphic/waves/include -I/home/jaxon/graphic/waves/src -g -o CMakeFiles/waves.dir/src/imgui_impl_opengl3.cpp.o -c /home/jaxon/graphic/waves/src/imgui_impl_opengl3.cpp",
+  "file": "/home/jaxon/graphic/waves/src/imgui_impl_opengl3.cpp",
+  "output": "CMakeFiles/waves.dir/src/imgui_impl_opengl3.cpp.o"
+},
+{
+  "directory": "/home/jaxon/graphic/waves/build",
+  "command": "/usr/bin/c++  -I/home/jaxon/assimp/include -I/home/jaxon/Downloads/freetype-2.10.0/include -I/home/jaxon/graphic/waves/include -I/home/jaxon/graphic/waves/src -g -o CMakeFiles/waves.dir/src/imgui_demo.cpp.o -c /home/jaxon/graphic/waves/src/imgui_demo.cpp",
+  "file": "/home/jaxon/graphic/waves/src/imgui_demo.cpp",
+  "output": "CMakeFiles/waves.dir/src/imgui_demo.cpp.o"
+}
+]

@@ -1,0 +1,3 @@
+/home/jaxon/graphic/waves/build/CMakeFiles/waves.dir
+/home/jaxon/graphic/waves/build/CMakeFiles/edit_cache.dir
+/home/jaxon/graphic/waves/build/CMakeFiles/rebuild_cache.dir
