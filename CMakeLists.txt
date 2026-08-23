@@ -1,18 +1,17 @@
 cmake_minimum_required(VERSION 3.10.0)
-project(waves VERSION 0.1.0 LANGUAGES C CXX)
+project(model-loader VERSION 0.1.0 LANGUAGES C CXX)
 
-# Path to where libassimp.so and includes are located
-set(ASSIMP_DIR "/home/jaxon/assimp")
-set(FREETYPE_DIR "/home/jaxon/Downloads/freetype-2.10.0")
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Find the libassimp.so library
-find_library(ASSIMP_LIB assimp HINTS "${ASSIMP_DIR}/bin" REQUIRED)
-message(STATUS "Assimp found at: ${ASSIMP_LIB}")
+# Dependencies resolved via vcpkg (see vcpkg.json)
+find_package(assimp CONFIG REQUIRED)
+find_package(glfw3 CONFIG REQUIRED)
+find_package(Freetype REQUIRED)
+find_package(OpenGL REQUIRED)
 
-# Create the executable
-add_executable(waves 
+add_executable(model-loader 
     src/main.cpp
-    src/glad.h
     src/glad.c
     src/imgui.cpp
     src/imgui_draw.cpp
@@ -21,15 +20,16 @@ add_executable(waves
     src/imgui_impl_glfw.cpp
     src/imgui_impl_opengl3.cpp
     src/imgui_demo.cpp
-)
+ )
 
-# Include directories (headers)
-target_include_directories(waves PRIVATE 
-    ${ASSIMP_DIR}/include
-    ${FREETYPE_DIR}/include
+target_include_directories(model-loader PRIVATE 
     include
     src
 )
 
-# Link the Assimp library and GLFW
-target_link_libraries(waves PRIVATE ${ASSIMP_LIB} glfw freetype)
+target_link_libraries(model-loader PRIVATE 
+    assimp::assimp
+    glfw
+    Freetype::Freetype
+    OpenGL::GL
+)

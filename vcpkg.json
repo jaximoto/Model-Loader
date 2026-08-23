@@ -1,0 +1,5 @@
+{
+  "name": "model-loader",
+  "version": "0.1.0",
+  "dependencies": [ "assimp", "glfw3", "freetype" ]
+}
