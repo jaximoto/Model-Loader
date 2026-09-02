@@ -20,8 +20,14 @@ add_executable(model-loader
     src/imgui_impl_glfw.cpp
     src/imgui_impl_opengl3.cpp
     src/imgui_demo.cpp
+    src/paths.hpp
  )
 
+# Make the an absolute path to be used for strings in main
+# Used by paths.h
+target_compile_definitions(model-loader PRIVATE 
+    PROJECT_SOURCE_DIR="${CMAKE_SOURCE_DIR}"
+)
 target_include_directories(model-loader PRIVATE 
     include
     src

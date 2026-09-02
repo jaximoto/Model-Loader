@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Shadowth117</author>
+      <authoring_tool>3dsMax 11 - Feeling ColladaMax v3.05B.</authoring_tool>
+      <comments>ColladaMax Export Options: ExportNormals=1;ExportEPolyAsTriangles=1;ExportXRefs=1;ExportSelected=0;ExportTangents=0;ExportAnimations=1;SampleAnim=0;ExportAnimClip=0;BakeMatrices=0;ExportRelativePaths=1;AnimStart=0;AnimEnd=3.33333;</comments>
+      <source_data>file:///C:/Users/Shadowth117/Documents/3dsmax/scenes/N64Logo.max</source_data>
+    </contributor>
+    <created>2009-11-18T03:42:54Z</created>
+    <modified>2009-11-18T03:42:54Z</modified>
+    <unit meter="0.0254" name="inch"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="_1_-_Default" name="_1_-_Default">
+      <instance_effect url="#_1_-_Default-fx"/>
+    </material>
+    <material id="_2_-_Default" name="_2_-_Default">
+      <instance_effect url="#_2_-_Default-fx"/>
+    </material>
+    <material id="_3_-_Default" name="_3_-_Default">
+      <instance_effect url="#_3_-_Default-fx"/>
+    </material>
+    <material id="_4_-_Default" name="_4_-_Default">
+      <instance_effect url="#_4_-_Default-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="_1_-_Default-fx" name="_1_-_Default">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <ambient>
+              <color>0.023529 0.576471 0.188235 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.023529 0.576471 0.188235 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>0.415939</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>1</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+              <emission_level>
+                <float>1</float>
+              </emission_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>0</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_2_-_Default-fx" name="_2_-_Default">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <ambient>
+              <color>0.007843 0.133333 0.662745 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.007843 0.133333 0.662745 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>0.415939</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>1</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+              <emission_level>
+                <float>1</float>
+              </emission_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>0</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_3_-_Default-fx" name="_3_-_Default">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <ambient>
+              <color>1 0.094117 0.074509 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 0.094117 0.074509 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>0.415939</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>1</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+              <emission_level>
+                <float>1</float>
+              </emission_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>0</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_4_-_Default-fx" name="_4_-_Default">
+      <profile_COMMON>
+        <technique sid="common">
+          <blinn>
+            <ambient>
+              <color>1 0.752941 0.003921 1</color>
+            </ambient>
+            <diffuse>
+              <color>1 0.752941 0.003921 1</color>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>0.415939</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>1</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+              <emission_level>
+                <float>1</float>
+              </emission_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>0</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="N64-mesh" name="N64">
+      <mesh>
+        <source id="N64-mesh-positions">
+          <float_array id="N64-mesh-positions-array" count="144">-11.1243 0.062433 0.443491 -11.1231 34.1774 0.447457 11.0747 0.079238 0.447879 25.3393 0 0.446247 25.3391 63.8204 0.444115 11.0793 63.8903 0.444683 11.079 29.1015 0.447512 -11.1128 63.8813 0.447716 -25.3833 64.1 0.446135 -25.3833 0.124863 0.443235 -11.1184 0 15.0607 11.0745 0.12678 15.0607 25.339 0.024871 15.0607 25.3393 64.0964 15.0607 11.0787 64.1 15.0607 -11.1107 63.8083 15.0607 -25.3832 64.0739 15.0607 -25.3833 0 15.0607 11.079 34.1894 0.447543 25.3335 33.0726 0.445451 11.074 30.26 15.0607 11.0791 0.0527 -22.0565 11.0786 0 -36.5729 11.0757 63.8991 -36.5729 11.0757 63.8991 -22.0648 11.0787 29.0659 -22.0644 25.3384 0.052696 -22.0565 25.3385 0 -36.5729 25.3385 64.1 -36.5729 25.3385 64.1 -22.0637 25.3385 29.0659 -22.0644 11.0794 34.2074 -36.573 11.0788 34.201 -22.0643 -11.1093 0.096967 -22.0651 -25.3838 0 -22.0619 -25.3835 63.8335 -22.0578 -11.1249 63.9001 -22.0588 -11.124 29.1253 -22.0644 -11.1093 0.096967 -36.5729 -25.3835 -0.000009 -36.5729 -25.3835 64.1 -36.5729 -11.1228 64.1 -36.5729 -11.124 29.1253 -36.5729 -11.1238 34.2023 -22.0644 -11.123 29.0789 0.447505 -25.3833 30.1922 0.442979 -25.3826 33.1126 -22.0605 -11.1142 33.0367 15.061</float_array>
+          <technique_common>
+            <accessor source="#N64-mesh-positions-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="N64-mesh-normals">
+          <float_array id="N64-mesh-normals-array" count="456">-1 0.000000 0.000001 -1 0.000001 0.000006 -1 0.000001 0.000005 -1 -0.000004 -0.000015 -1 0 -0.000008 1 -0.000003 0.000017 1 0.000003 -0.000015 1 0.000002 -0.000009 1 -0.000005 0.000023 -0.000075 -0.000008 -1 -0.000121 -0.000015 -1 -0.000083 -0.000012 -1 0.000044 -0.000002 -1 0.000162 0.000028 -1 0.000082 0.000008 -1 0.000259 0.000066 -1 0.000324 0.000093 -1 -0.006361 -0.999977 0.002465 -0.005554 -0.999979 0.003253 -0.006337 -0.999977 0.002489 -0.007143 -0.999973 0.001701 0.002537 0.999858 -0.016646 0.000248 0.999822 -0.018878 0.00261 0.999859 -0.016575 0.004899 0.999885 -0.014342 -0.035566 -0.000028 -0.999367 -0.000146 0.000006 -1 1 -0.000000 -0.000011 1 -0.000000 0.000000 1 0 -0.000000 1 0 -0.000000 -1 -0.000000 0.000008 -1 -0.000003 0.000017 -1 -0.000013 0.000032 -1 -0.000002 0.000001 -1 0.000042 -0.000119 -1 0.00001 -0.000027 -1 0.000099 -0.000262 -1 0.000139 -0.000358 0.000007 0.000001 1 0.000004 0 1 0.000000 0 1 0.000000 0 1 0.000000 0 1 1 -0.000022 0.000054 1 -0.000107 0.000276 1 -0.000181 0.000486 0 0 1 -0.000000 -0.999993 0.00363 -0.000000 -0.999993 0.00363 -0.000000 -0.999993 0.00363 0 -0.999993 0.00363 -0.014081 0.999901 -0.000000 -0.014081 0.999901 -0.000000 -0.014081 0.999901 -0.000000 -0.014081 0.999901 -0.000000 -1 0.000019 -0.000029 -1 0.000023 -0.000039 0.000002 -0.000000 -1 0.000005 -0.000000 -1 0.000002 0.000002 -1 0 0 -1 -1 0.000003 -0.000002 -1 0 -0.000017 -1 0.000000 -0.000015 -1 0.000004 0 -0.000001 -0.000000 -1 0.000000 0 -1 -0.000002 0.000000 -1 -0.000001 0.000004 -1 -0.000007 -0.000005 1 -0.000051 0.000006 1 -0.000055 0.000016 1 0.000085 -0.000001 1 0.000232 -0.000027 1 0.000162 -0.000024 1 0.000000 -0.000018 1 0.000000 -0.000017 1 -0.034166 -0.559984 0.827799 0 -0.550396 0.834904 -0.009396 -0.553105 0.833059 -0.043955 -0.562598 0.825561 0 0.543595 -0.839347 0.000554 0.543435 -0.839451 0.002073 0.542995 -0.839734 0.002626 0.542834 -0.839836 0.000000 0 -1 0.000000 0 -1 0.006793 -0.999977 0.000000 0.006792 -0.999977 0 0.006793 -0.999977 0.000000 0.006793 -0.999977 0.000000 0.000244 -0.000028 1 0.387045 -0.000053 0.922061 0 0 1 -0.002308 0.999868 0.016086 0.000000 0.999832 0.018354 -0.002361 0.999869 0.016034 -0.004671 0.999894 0.013765 -0.002154 -0.999977 -0.006439 0 -0.999964 -0.008541 -0.002223 -0.999977 -0.006372 -0.004378 -0.999981 -0.004269 0.836092 0.54854 -0.007361 0.834118 0.55158 0.002631 0.840687 0.54053 -0.032765 0.842255 0.537416 -0.042311 -0.830763 -0.555658 -0.032814 -0.83806 -0.545575 0.001766 -0.836097 -0.548521 -0.008081 -0.828376 -0.558513 -0.04309 0.01699 0.99985 0.003359 0.015324 0.99987 0.004986 0.016941 0.999851 0.003407 0.018606 0.999825 0.001781 0.000017 0.000008 1 0.000018 0.000012 1 -0.842882 0.538098 0 -0.842882 0.538098 -0.000000 -0.842882 0.538099 -0.000000 -0.842882 0.538098 0 0.838246 -0.545293 -0.000045 0.838255 -0.545279 0 0.838223 -0.545328 -0.000163 0.838214 -0.545341 -0.000208 0.007134 0.545588 0.838023 0.043099 0.555436 0.830442 0.033066 0.552768 0.832679 -0.002473 0.542824 0.839843 0 0 1 0 0 1 0 0 1 0 0 1 -1 -0.00002 -0.000035 -1 -0.000031 -0.000037 1 -0.000038 -0.000325 1 -0.00007 -0.000455 1 -0.000046 -0.00031 1 -0.000007 -0.000003 1 0.000017 0.0001 1 0.000037 0.000097 1 -0.000036 0 1 -0.000033 -0.000001 -0.899081 0.000108 0.437783 -0.899081 0.000108 0.437783 -0.899081 0.000108 0.437783 1 -0.000095 -0.000574 1 0.000022 -0.000606 0.03253 -0.552897 -0.832615 0.0418 -0.549946 -0.834154 0.007228 -0.560674 -0.828005 -0.002452 -0.563542 -0.826084</float_array>
+          <technique_common>
+            <accessor source="#N64-mesh-normals-array" count="152" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="N64-mesh-vertices">
+          <input semantic="POSITION" source="#N64-mesh-positions"/>
+        </vertices>
+        <triangles material="_2_-_Default" count="30">
+          <input semantic="VERTEX" source="#N64-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#N64-mesh-normals" offset="1"/>
+          <p>17 0 16 1 8 2 17 0 8 2 45 3 17 0 45 3 9 4 3 5 4 6 13 7 13 7 12 8 3 5 30 27 27 28 28 29 28 29 29 30 30 27 25 31 22 32 21 33 25 31 21 33 18 34 18 34 14 35 5 36 25 31 18 34 5 36 14 35 18 34 6 37 14 35 6 37 20 38 26 44 27 28 30 27 26 44 30 27 4 45 26 44 4 45 19 46 22 32 25 31 32 56 32 56 31 57 22 32 40 62 39 63 34 64 34 64 35 65 40 62 46 133 9 4 45 3 45 3 35 134 46 133 44 135 10 136 0 137 44 135 0 137 43 138 43 138 41 139 36 140 44 135 43 138 36 140 43 138 37 141 42 142 42 142 41 139 43 138 47 146 10 136 44 135 47 146 44 135 1 147</p>
+        </triangles>
+        <triangles material="_1_-_Default" count="50">
+          <input semantic="VERTEX" source="#N64-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#N64-mesh-normals" offset="1"/>
+          <p>6 9 3 10 2 11 6 9 2 11 1 12 1 12 8 13 7 14 6 9 1 12 7 14 8 13 1 12 44 15 8 13 44 15 45 16 11 17 2 18 3 19 3 19 12 20 11 17 19 25 3 10 6 9 6 9 18 26 19 25 20 39 11 40 12 41 20 39 12 41 13 42 14 43 20 39 13 42 4 47 3 10 19 25 27 48 26 49 21 50 21 50 22 51 27 48 22 58 31 59 28 60 28 60 27 61 22 58 38 66 39 67 42 68 23 69 28 60 31 59 42 68 23 69 31 59 38 66 42 68 31 59 32 70 29 71 24 72 32 70 24 72 37 73 37 73 34 74 33 75 32 70 37 73 33 75 29 71 32 70 25 76 25 76 30 77 29 71 30 82 25 83 4 84 25 83 5 85 4 84 40 86 41 87 42 68 40 86 42 68 39 67 38 88 33 89 34 90 34 90 39 91 38 88 34 74 37 73 43 92 34 74 43 92 46 93 34 74 46 93 35 94 10 99 17 100 9 101 9 101 0 102 10 99 1 107 2 108 11 109 1 107 11 109 47 110 47 115 11 40 20 39 20 39 15 116 47 115 33 121 38 122 31 123 33 121 31 123 32 124 35 125 45 126 44 127 36 128 35 125 44 127 16 129 17 130 10 131 16 129 10 131 15 132 47 143 15 144 10 145</p>
+        </triangles>
+        <triangles material="_4_-_Default" count="8">
+          <input semantic="VERTEX" source="#N64-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#N64-mesh-normals" offset="1"/>
+          <p>14 21 13 22 4 23 4 23 5 24 14 21 29 52 28 53 23 54 23 54 24 55 29 52 41 95 40 96 35 97 35 97 36 98 41 95 15 111 7 112 8 113 8 113 16 114 15 111</p>
+        </triangles>
+        <triangles material="_3_-_Default" count="8">
+          <input semantic="VERTEX" source="#N64-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#N64-mesh-normals" offset="1"/>
+          <p>18 78 21 79 26 80 26 80 19 81 18 78 7 103 15 104 20 105 20 105 6 106 7 103 37 117 24 118 23 119 42 120 37 117 23 119 46 148 43 149 0 150 9 151 46 148 0 150</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="N64Logo.max" name="N64Logo_max">
+      <node id="N64-node" name="N64" type="NODE">
+        <translate>-0.006047 0.197258 28.7307</translate>
+        <rotate>-1 0 0 -90</rotate>
+        <scale>1.18181 0.896433 1.16447</scale>
+        <node id="N64-node_PIVOT" name="N64_PIVOT" type="NODE">
+          <matrix>1 0 0 0.022241 0 1 0 -32.05 0 0 1 10.756 0 0 0 1</matrix>
+          <instance_geometry url="#N64-mesh">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="_2_-_Default" target="#_2_-_Default"/>
+                <instance_material symbol="_1_-_Default" target="#_1_-_Default"/>
+                <instance_material symbol="_4_-_Default" target="#_4_-_Default"/>
+                <instance_material symbol="_3_-_Default" target="#_3_-_Default"/>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0</start_time>
+          <end_time>3.33333</end_time>
+        </technique>
+      </extra>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>30</frame_rate>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#N64Logo.max"/>
+  </scene>
+</COLLADA>

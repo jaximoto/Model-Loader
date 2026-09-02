@@ -20,6 +20,7 @@
 #include <cmath>
 #include <iostream>
 #include <filesystem>
+#include "paths.hpp"
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
@@ -117,7 +118,7 @@ int main()
 
     Shader myShader("../shaders/shader.vs", "../shaders/shader.fs");
 
-    Model myModel = Model("../resources/n64/n64.obj");
+    Model myModel = Model("./resources/n64/n64.obj");
     // LETS GOOO Render Loop!
     while (!glfwWindowShouldClose(window))
     {
