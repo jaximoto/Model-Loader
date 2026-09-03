@@ -49,7 +49,7 @@ private:
         const aiScene *scene = importer.ReadFile(path.string(), aiProcess_Triangulate | aiProcess_FlipUVs |
                                                            aiProcess_GenNormals | aiProcess_CalcTangentSpace | aiProcess_OptimizeMeshes);
 
-        if (!scene || scene->mFlags * AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
+        if (!scene || scene->mFlags && AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
         {
             cout << "Error::ASSIMP::" << importer.GetErrorString() << endl;
             return;
@@ -87,6 +87,7 @@ private:
         vector<Vertex> vertices;
         vector<unsigned int> indices;
         vector<Texture> textures;
+        Material material_{};
 
         for (unsigned int i = 0; i < mesh->mNumVertices; i++)
         {
@@ -154,7 +155,8 @@ private:
         }
 
         // TEXTURES
-        if (mesh->mMaterialIndex >= 0)
+        // Prevent out of bounds error, last check never did anything
+        if (mesh->mMaterialIndex < scene->mNumMaterials)
         {
             // Get material, then get respective textures
             aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
@@ -170,8 +172,22 @@ private:
 
             vector<Texture> heightMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
             textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
+
+            // MATERIAL COLORS
+            aiColor3D c;
+            if (AI_SUCCESS == material->Get(AI_MATKEY_COLOR_AMBIENT, c))
+				material_.ambient = glm::vec3(c.r, c.g, c.b);
+            if (material->Get(AI_MATKEY_COLOR_DIFFUSE, c) == AI_SUCCESS) material_.diffuse = { c.r, c.g, c.b };
+            if (material->Get(AI_MATKEY_COLOR_SPECULAR, c) == AI_SUCCESS) material_.specular = { c.r, c.g, c.b };
+            if (material->Get(AI_MATKEY_COLOR_EMISSIVE, c) == AI_SUCCESS) material_.emissive = { c.r, c.g, c.b };
+
+			float shininess = 1.0f;
+			if (material->Get(AI_MATKEY_SHININESS, shininess) == AI_SUCCESS) material_.shininess = shininess;
+
+			float opacity = 1.0f;
+			if (material->Get(AI_MATKEY_OPACITY, opacity) == AI_SUCCESS) material_.opacity = opacity;
         }
-        return Mesh(vertices, indices, textures);
+        return Mesh(vertices, indices, textures, material_);
     }
 
     vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName)
