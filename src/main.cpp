@@ -6,6 +6,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/string_cast.hpp>
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
@@ -119,6 +120,7 @@ int main()
     Shader myShader(paths::shaders() / "shader.vs", paths::shaders() / "shader.fs");
 
     Model myModel = Model(paths::resources() / "n64/n64.obj");
+	
     // LETS GOOO Render Loop!
     while (!glfwWindowShouldClose(window))
     {
@@ -126,8 +128,9 @@ int main()
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
         // input
-        processInput(window);
+        
         glfwPollEvents();
+        processInput(window);
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
@@ -141,18 +144,19 @@ int main()
         myShader.use();
 
         // transformation
-
+		//std::cout << "Camera Position: " << camera.Position.x << ", " << camera.Position.y << ", " << camera.Position.z << std::endl;
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.GetViewMatrix();
-
+		//std::cout << "View Matrix: " << to_string(view) << std::endl;
+        
         // Retrieve the matrix uniform locations
         myShader.setMat4("view", view);
         myShader.setMat4("projection", projection);
 
         // render the loaded model
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
-        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));     // it's a bit too big for our scene, so scale it down
+        model = glm::translate(model, glm::vec3(0.0f, -10.0f, 0.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(.1f, 0.1f, 0.1f));     // it's a bit too big for our scene, so scale it down
         model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0.0f, 1.0f, 0.0f));
         myShader.setMat4("model", model);
         myModel.Draw(myShader);
@@ -178,6 +182,7 @@ void processInput(GLFWwindow *window)
         glfwSetWindowShouldClose(window, true);
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        //std::cout << "W pressed, deltaTime=" << deltaTime << std::endl;
         camera.ProcessKeyboard(FORWARD, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
         camera.ProcessKeyboard(BACKWARD, deltaTime);
