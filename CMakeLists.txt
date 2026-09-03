@@ -26,7 +26,7 @@ add_executable(model-loader
 # Make the an absolute path to be used for strings in main
 # Used by paths.h
 target_compile_definitions(model-loader PRIVATE 
-    PROJECT_SOURCE_DIR="${CMAKE_SOURCE_DIR}"
+    PROJECT_ROOT_DIR="${CMAKE_SOURCE_DIR}"
 )
 target_include_directories(model-loader PRIVATE 
     include

@@ -17,13 +17,14 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <filesystem>
 
 using namespace std;
 
 class Model
 {
 public:
-    Model(const char *path, bool gamma = false) : gammaCorrection(gamma)
+    Model(const std::filesystem::path& path, bool gamma = false) : gammaCorrection(gamma)
     {
         loadModel(path);
     }
@@ -42,10 +43,10 @@ private:
     string directory;
     bool gammaCorrection;
 
-    void loadModel(string path)
+    void loadModel(const std::filesystem::path& path)
     {
         Assimp::Importer importer;
-        const aiScene *scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs |
+        const aiScene *scene = importer.ReadFile(path.string(), aiProcess_Triangulate | aiProcess_FlipUVs |
                                                            aiProcess_GenNormals | aiProcess_CalcTangentSpace | aiProcess_OptimizeMeshes);
 
         if (!scene || scene->mFlags * AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
@@ -54,8 +55,8 @@ private:
             return;
         }
 
-        // if it works
-        directory = path.substr(0, path.find_last_of('/'));
+        // if it works get parent directory to load textures from.
+		directory = path.parent_path().string();
         processNode(scene->mRootNode, scene);
     }
 
@@ -216,13 +217,27 @@ private:
         unsigned char *data = stbi_load(fileName.c_str(), &width, &height, &nrComponents, 0);
         if (data)
         {
-            GLenum format;
-            if (nrComponents == 1)
-                format = GL_RED;
-            if (nrComponents == 3)
-                format = GL_RGB;
-            if (nrComponents == 4)
-                format = GL_RGBA;
+            GLenum format = GL_RED;
+            switch (nrComponents)
+            {
+                case 1:
+				    format = GL_RED;
+                    break;
+                case 2:
+                    format = GL_RG;
+					break;
+                case 3:
+                    format = GL_RGB;
+                    break;
+                case 4:
+                    format = GL_RGBA;
+					break;
+                default:
+                    std::cout << "Texture failed to load::Unknown number of components: " << nrComponents << std::endl;
+					stbi_image_free(data);
+                    return textureID;
+            }
+            
 
             glBindTexture(GL_TEXTURE_2D, textureID);
             glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);

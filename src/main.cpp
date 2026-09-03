@@ -116,9 +116,9 @@ int main()
     // Depth Testing
     glEnable(GL_DEPTH_TEST);
 
-    Shader myShader("../shaders/shader.vs", "../shaders/shader.fs");
+    Shader myShader(paths::shaders() / "shader.vs", paths::shaders() / "shader.fs");
 
-    Model myModel = Model("./resources/n64/n64.obj");
+    Model myModel = Model(paths::resources() / "n64/n64.obj");
     // LETS GOOO Render Loop!
     while (!glfwWindowShouldClose(window))
     {

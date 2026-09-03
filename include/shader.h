@@ -7,7 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
+#include <filesystem>
 
 class Shader{
 	public:
@@ -15,7 +15,7 @@ class Shader{
 		unsigned int ID;
 
 		// constructor reads and builds shader
-		Shader(const char* vertexPath, const char* fragmentPath){
+		Shader(const std::filesystem::path& vertexPath, std::filesystem::path& fragmentPath){
 			// Get vertex and fragment shader code
 			std::string vertexCode;
 			std::string fragmentCode;
