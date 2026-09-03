@@ -37,19 +37,30 @@ struct Texture
     string path;
 };
 
+struct Material
+{ 
+    glm::vec3 ambient = glm::vec3(0.2f);
+    glm::vec3 diffuse = glm::vec3(0.8f);
+    glm::vec3 specular = glm::vec3(0.0f);
+    glm::vec3 emissive = glm::vec3(0.0f);
+    float shininess = 1.0f;
+    float opacity = 1.0f;
+};
 class Mesh
 {
 public:
     vector<Vertex> vertices;
     vector<unsigned int> indices;
     vector<Texture> textures;
+	Material material;
 
     // Constructor
-    Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures)
+    Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures, Material material)
     {
         this->vertices = vertices;
         this->indices = indices;
         this->textures = textures;
+		this->material = material;
 
         SetupMesh();
     }
@@ -84,6 +95,17 @@ public:
             // and finally bind the texture
             glBindTexture(GL_TEXTURE_2D, textures[i].id);
         }
+        shader.setVec3("material.ambient", material.ambient);
+        shader.setVec3("material.diffuse", material.diffuse);
+        shader.setVec3("material.specular", material.specular);
+        shader.setVec3("material.emissive", material.emissive);
+        shader.setFloat("material.shininess", material.shininess);
+        shader.setFloat("material.opacity", material.opacity);
+
+        // tell the shader whether a diffuse texture was actually bound this draw
+        bool hasDiffuseTex = false;
+        for (auto& t : textures) if (t.type == "texture_diffuse") { hasDiffuseTex = true; break; }
+        shader.setBool("material.hasDiffuseTex", hasDiffuseTex);
 
         // DRAW
         glBindVertexArray(VAO);
