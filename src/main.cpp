@@ -59,7 +59,14 @@ int main()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     // glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    GLFWwindow *window = glfwCreateWindow(800, 600, "Textures", NULL, NULL);
+	// Query primary monitor and get its video mode
+	GLFWmonitor* primaryMonitor = glfwGetPrimaryMonitor();
+	const GLFWvidmode* mode = glfwGetVideoMode(primaryMonitor);
+
+    // Size window as percentage of screen res
+    unsigned int windowWidth = static_cast<unsigned int>(mode->width * 0.8f);
+    unsigned int windowHeight = static_cast<unsigned int>(mode->height * 0.8f);
+    GLFWwindow *window = glfwCreateWindow(windowWidth, windowHeight, "Textures", NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create window" << std::endl;
@@ -78,7 +85,7 @@ int main()
     }
 
     // Specify viewport for openGL
-    glViewport(0, 0, 800, 600);
+    glViewport(0, 0, windowWidth, windowHeight);
 
     // Tell GLFW to call my func on resize
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
