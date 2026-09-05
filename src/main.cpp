@@ -44,6 +44,9 @@ bool mouseLocked = true;
 float lastFrame = 0.0f; // Time of last frame
 float deltaTime = 0.0f; // Time between current frame and last frame
 
+// Previous callbacks to chain imGui callbacks
+GLFWcursorposfun prevCursorPosCallback = nullptr;
+GLFWscrollfun prevScrollCallback = nullptr;
 
 // lighting struct
 
@@ -149,7 +152,7 @@ int main()
         // Check if there is a mouse click and if the mouse isn't locked and not on ui
         if (ImGui::IsMouseClicked(ImGuiMouseButton_Left) && !io.WantCaptureMouse && mouseLocked == false)
         {
-			std::cout << "Mouse Clicked, locking mouse" << std::endl;
+			//std::cout << "Mouse Clicked, locking mouse" << std::endl;
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
             mouseLocked = true;
 		}
@@ -161,15 +164,14 @@ int main()
 
         // transformation
 		//std::cout << "Camera Position: " << camera.Position.x << ", " << camera.Position.y << ", " << camera.Position.z << std::endl;
-        // Update camera when mouse is locked
-        if (mouseLocked)
-        {
-            glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-            glm::mat4 view = camera.GetViewMatrix();
-            // Retrieve the matrix uniform locations
-            myShader.setMat4("view", view);
-            myShader.setMat4("projection", projection);
-        }
+        
+       
+        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        glm::mat4 view = camera.GetViewMatrix();
+        // Retrieve the matrix uniform locations
+        myShader.setMat4("view", view);
+        myShader.setMat4("projection", projection);
+        
        
 		//std::cout << "View Matrix: " << to_string(view) << std::endl;
         
@@ -201,8 +203,12 @@ int main()
 void processInput(GLFWwindow *window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS && mouseLocked)
-        
+    {
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+		mouseLocked = false;
+    }
+        
+       
         
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
@@ -229,6 +235,11 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 // -------------------------------------------------------
 void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
 {
+    // Call previous callback for ImGui
+    if (prevCursorPosCallback)
+    {
+        prevCursorPosCallback(window, xposIn, yposIn);
+	}
     float xpos = static_cast<float>(xposIn);
     float ypos = static_cast<float>(yposIn);
 
@@ -245,12 +256,18 @@ void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
     lastX = xpos;
     lastY = ypos;
 
-    camera.ProcessMouseMovement(xoffset, yoffset);
+	if (mouseLocked)
+        camera.ProcessMouseMovement(xoffset, yoffset);
 }
 
 // glfw: whenever the mouse scroll wheel scrolls, this callback is called
 // ----------------------------------------------------------------------
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
 {
+    // Call previous callback for ImGui
+    if (prevScrollCallback)
+    {
+		prevScrollCallback(window, xoffset, yoffset);
+    }
     camera.ProcessMouseScroll(static_cast<float>(yoffset));
 }
