@@ -23,6 +23,8 @@
 #include <filesystem>
 #include "paths.hpp"
 
+const char* title = "3D Model Viewer";
+
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
@@ -102,6 +104,18 @@ int main()
     ImGui_ImplGlfw_InitForOpenGL(window, true); // Second param install_callback=true will install GLFW callbacks and chain to existing ones.
     ImGui_ImplOpenGL3_Init();
 
+    GLFWimage icon;
+    icon.pixels = stbi_load((paths::resources() / "elite.jpg").string().c_str(), &icon.width, &icon.height, 0, 4); // force 4 channels (RGBA)
+
+    if (icon.pixels)
+    {
+        glfwSetWindowIcon(window, 1, &icon);
+        stbi_image_free(icon.pixels);
+    }
+    else
+    {
+        std::cout << "Failed to load window icon" << std::endl;
+    }
     // Setup fonts
     struct Character
     {
